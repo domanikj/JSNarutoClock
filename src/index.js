@@ -15,6 +15,18 @@ let sec  = date.getSeconds();
 
 // Current date & time
 currDate = month + day + year;
-currTime = hour + min + sec;
+currTime = hour  + min + sec;
 
 
+// Functions
+const setLunch = () => {
+    
+}
+
+const setStudy = () => {
+    
+}
+
+const setBreak = () => {
+
+}
