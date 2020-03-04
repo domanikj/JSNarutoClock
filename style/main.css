@@ -5,8 +5,12 @@ html, body {
 #main-header {
     text-align: center;
     color: black;
+    padding-bottom: 12px;
 }
 
 .col-lg {
 text-align: center;
+}
+#main-img{
+    width: 500px;
 }
