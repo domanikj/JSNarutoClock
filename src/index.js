@@ -19,8 +19,17 @@ currTime = hour  + min + sec;
 
 
 // Functions
+
+
+const setBF = () => {
+
+}
+
 const setLunch = () => {
     
+}
+const setDinner = () => {
+
 }
 
 const setStudy = () => {

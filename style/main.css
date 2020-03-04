@@ -1,16 +1,28 @@
 html, body {
     background-color: purple;
+    font-family:Arial Black
+    , helvetica, sans-serif;
+
 }
 
 #main-header {
+    padding-top: 17px;
+
     text-align: center;
     color: black;
-    padding-bottom: 12px;
+
+}
+
+#sub-header{
+    text-align: center;
+    color: black;
+    padding-bottom: 18px;
 }
 
 .col-lg {
 text-align: center;
 }
+
 #main-img{
-    width: 500px;
+    width: 70%;
 }
