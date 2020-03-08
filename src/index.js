@@ -1,6 +1,7 @@
 // Inits
 const date = new Date()
 let grabDate = document.getElementById('date');
+let grabTime = document.getElementById('time');
 
 // Date
 let day = date.getDate()
@@ -12,12 +13,19 @@ let hour = date.getHours();
 let min  = date.getMinutes();
 let sec  = date.getSeconds();
 
+// Time & Date
 let currDate = formatDate(padZero(month.toLocaleString()) + padZero(day.toString()) + year.toString());
+
+
+
+let currTime = hour - 12+ ''+ min +'' + sec; 
+
+
+console.log(currTime)
 
 // Current date & time
 grabDate.innerText = currDate
-console.log(grabDate.textContent)
-let currTime = hour + ':'+ min +':' + sec; 
+
 
 
 //console.log(grabDate.innerHTML = "ddssdfsdf")
@@ -25,7 +33,7 @@ let currTime = hour + ':'+ min +':' + sec;
 //grabDate.innerHTML = currDate
 // Functions
 console.log(grabDate.innerHTML)
-console.log(currTime)
+
 
 const setBF = () => {
 
@@ -56,10 +64,11 @@ function padZero(str){
     if(str.length <= 1) return "0"+str;
 }
 
+
 /*
 * Formats date properly
 * @param {String} current date
-* @return A string with appended '-' 
+* @return A string swith appended '-' 
 */
 function formatDate(str) {
     let currDate = ""
@@ -76,8 +85,8 @@ function formatDate(str) {
 */
 function formatTime(str) {
     let currTime = ""
-    if(!str.includes('-')){
-       currTime = str.slice(0,2) + '-' +str.slice(2,4) + '-'+str.substr(4);
+    if(!str.includes(':')){
+       currTime = str.slice(0,2) + ':' +str.slice(2,4) + ':'+str.substr(4);
        return currTime;
     }
 }
