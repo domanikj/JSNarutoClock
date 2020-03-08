@@ -6,26 +6,15 @@ let DinnerHour  = document.getElementsByClassName("Dinner");
 let DessertHour = document.getElementsByClassName("Dessert");
 
 // Function to call every second
-setInterval(callDateTime, 1000);
+setInterval(callSets, 1000);
 
-setLunch('12');
-const setBF = () => {
 
+
+function callSets(){
+    let monent = new Date();
+    callDateTime();
+    setLunch(monent.getHours());
 }
-
-
-const setDinner = () => {
-
-}
-
-const setStudy = () => {
-    
-}
-
-const setBreak = () => {
-
-}
-
 
 
 function setLunch(num) {
@@ -33,7 +22,6 @@ function setLunch(num) {
     let today       = new Date();
     let startTime   = new Date();
 
-   
     if(startHour === 12) {
         startTime.setHours(12, 0, 0);
         today.setHours(13,0,0)
@@ -41,12 +29,20 @@ function setLunch(num) {
             document.getElementById('main-img').src  = 'https://cdn5.vectorstock.com/i/1000x1000/65/24/letter-j-painted-brush-vector-20406524.jpg';    
             document.getElementsByClassName('img-heading')[0].innerHTML = "Lunch!!! Is being served";
         }else{
-            document.getElementById('main-img').src  = '../img/SasukeS.jpg';
+            document.getElementById('main-img').src  = 'https://vignette.wikia.nocookie.net/boruto/images/0/0d/Uchiha_Sasuke.jpg/revision/latest/top-crop/width/360/height/450?cb=20180720230406';
+            document.getElementsByClassName('img-heading')[0].innerHTML = "Not Lunch! Not Dinner! Not Dessert";
+        }
+    }else if(startHour === 1) {
+        startTime.setHours(13, 0, 0);
+        today.setHours(14,0,0)
+        if(startTime < today ) {
+            document.getElementById('main-img').src  = 'https://cdn5.vectorstock.com/i/1000x1000/65/24/letter-j-painted-brush-vector-20406524.jpg';    
+            document.getElementsByClassName('img-heading')[0].innerHTML = "Lunch!!! Is being served";
+        }else{
+            document.getElementById('main-img').src  = 'https://vignette.wikia.nocookie.net/boruto/images/0/0d/Uchiha_Sasuke.jpg/revision/latest/top-crop/width/360/height/450?cb=20180720230406';
+            document.getElementsByClassName('img-heading')[0].innerHTML = "Not Lunch! Not Dinner! Not Dessert";
         }
     }
-
-
-
 }
 
 
