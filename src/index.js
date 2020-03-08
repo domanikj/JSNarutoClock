@@ -30,7 +30,7 @@ const setBreak = () => {
 */
 function callDateTime() {
     // Date obj
-    const date = new Date()
+    let date = new Date()
 
     // Time
     let hour = date.getHours();
@@ -54,11 +54,12 @@ function callDateTime() {
 * @return an appended 0 at start of string
 */
 function padZero(str){
+    debugger;
     str = str.toString();
     if(str.length <= 1) {
         return "0"+str;
 }
-return str
+return str.toString()
 }
 /*
 * Formats date properly
@@ -92,6 +93,13 @@ function formatTime(str) {
 * @return The correct hour 
 */
 function formatHour(num){
-    if(num > 12) return num - 12
+    if(num > 12){
+        return num - 12;
+    }else if (num === 0){
+        num = 12;
+        return num;
+    }else {
+    return num;
+    }
 }
 
