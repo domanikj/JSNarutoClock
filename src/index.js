@@ -1,35 +1,50 @@
 // Inits
-const date = new Date()
 let grabDate = document.getElementById('date');
 let grabTime = document.getElementById('time');
 
-// Date
-let day = date.getDate()
-let month = date.getMonth()
-let year = date.getFullYear()
+// // Date
+// let day = date.getDate()
+// let month = date.getMonth()
+// let year = date.getFullYear()
 
-// Time
-let hour = date.getHours();
-let min  = date.getMinutes();
-let sec  = date.getSeconds();
+// // Time
+// let hour = date.getHours();
+// let min  = date.getMinutes();
+// let sec  = date.getSeconds();
 
 // Time & Date
-let currDate = formatDate(padZero(month.toLocaleString()) + padZero(day.toString()) + year.toString());
-let currTime = formatTime(padZero(formatHour(hour)) + ''+ padZero(min) +'' + padZero(sec)); 
+// let currDate = formatDate(padZero(month.toLocaleString()) + padZero(day.toString()) + year.toString());
+// let currTime = formatTime(padZero(formatHour(hour)) + ''+ padZero(min) +'' + padZero(sec)); 
 
 
-console.log(currTime)
 
+
+
+
+function callTime() {
+    // Date obj
+    const date = new Date()
+
+    // Time
+    let hour = date.getHours();
+    let min  = date.getMinutes();
+    let sec  = date.getSeconds();
+
+
+
+
+    grabTime.innerHTML = formatTime(padZero(formatHour(hour)) + ''+ padZero(min) +'' + padZero(sec)); ;
+}
+
+ 
 // Current date & time
-grabDate.innerText = currDate
-grabTime.innerHTML = currTime
+// grabDate.innerText = currDate
+// grabTime.innerHTML = currTime
+// grabDate.innerText = currDate
 
+setInterval(callTime, 1000);
 
-//console.log(grabDate.innerHTML = "ddssdfsdf")
-
-//grabDate.innerHTML = currDate
 // Functions
-console.log(grabDate.innerHTML)
 
 
 const setBF = () => {
