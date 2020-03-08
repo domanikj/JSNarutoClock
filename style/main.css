@@ -2,15 +2,12 @@ html, body{
     background-color: purple;
     font-family:Arial Black
     , helvetica, sans-serif;
-
 }
 
 #main-header {
     padding-top: 17px;
-
     text-align: center;
     color: black;
-
 }
 
 #sub-header{

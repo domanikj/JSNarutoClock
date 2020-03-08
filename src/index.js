@@ -1,9 +1,14 @@
 // Inits
-let grabDate = document.getElementById('date');
-let grabTime = document.getElementById('time');
+let grabDate    = document.getElementById('date');
+let grabTime    = document.getElementById('time');
+let lunchHour   = document.getElementsByClassName("Lunch");
+let DinnerHour  = document.getElementsByClassName("Dinner");
+let DessertHour = document.getElementsByClassName("Dessert");
+
 
 // Function to call every second
 setInterval(callDateTime, 1000);
+
 
 const setBF = () => {
 
@@ -61,6 +66,7 @@ function padZero(str){
 }
 return str.toString()
 }
+
 /*
 * Formats date properly
 * @param {String} current date
