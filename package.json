@@ -18,7 +18,10 @@
   },
   "homepage": "https://github.com/domanikj/JSNarutoClock#readme",
   "devDependencies": {
+    "@babel/core": "^7.8.7",
+    "@babel/preset-env": "^7.8.7",
     "babel-cli": "^6.26.0",
-    "babel-preset-latest": "^6.24.1"
+    "babel-preset-latest": "^6.24.1",
+    "babel-watch": "^7.0.0"
   }
 }
