@@ -9,14 +9,12 @@ let DessertHour = document.getElementsByClassName("Dessert");
 // Function to call every second
 setInterval(callDateTime, 1000);
 
-
+setLunch('12');
 const setBF = () => {
 
 }
 
-const setLunch = () => {
-    
-}
+
 const setDinner = () => {
 
 }
@@ -28,6 +26,23 @@ const setStudy = () => {
 const setBreak = () => {
 
 }
+
+
+
+function setLunch(num) {
+    let startHour = parseInt(num);
+    let today = new Date();
+    let endTime   = new Date();
+    let endHour   = endTime.getHours();
+    endTime.setHours(12, 0, 0);
+
+     if(endTime < today ){
+        document.getElementById('main-img').src = '../img/SasukeS.jpg'
+
+      
+     }
+}
+
 
 /*
 * Gets current date time
@@ -58,8 +73,7 @@ function callDateTime() {
 * @param {String} current month
 * @return an appended 0 at start of string
 */
-function padZero(str){
-    debugger;
+function padZero(str) {
     str = str.toString();
     if(str.length <= 1) {
         return "0"+str;
