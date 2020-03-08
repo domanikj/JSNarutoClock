@@ -15,17 +15,14 @@ let sec  = date.getSeconds();
 
 // Time & Date
 let currDate = formatDate(padZero(month.toLocaleString()) + padZero(day.toString()) + year.toString());
-
-
-
-let currTime = hour - 12+ ''+ min +'' + sec; 
+let currTime = formatTime(padZero(formatHour(hour)) + ''+ padZero(min) +'' + padZero(sec)); 
 
 
 console.log(currTime)
 
 // Current date & time
 grabDate.innerText = currDate
-
+grabTime.innerHTML = currTime
 
 
 //console.log(grabDate.innerHTML = "ddssdfsdf")
@@ -61,10 +58,12 @@ const setBreak = () => {
 * @return an appended 0 at start of string
 */
 function padZero(str){
-    if(str.length <= 1) return "0"+str;
+    str = str.toString();
+    if(str.length <= 1) {
+        return "0"+str;
 }
-
-
+return str
+}
 /*
 * Formats date properly
 * @param {String} current date
@@ -91,3 +90,11 @@ function formatTime(str) {
     }
 }
 
+/*
+* Formats hour properly
+* @param {Number} get hour
+* @return The correct hour 
+*/
+function formatHour(num){
+    if(num > 12) return num - 12
+}
