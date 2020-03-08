@@ -2,50 +2,8 @@
 let grabDate = document.getElementById('date');
 let grabTime = document.getElementById('time');
 
-// // Date
-// let day = date.getDate()
-// let month = date.getMonth()
-// let year = date.getFullYear()
-
-// // Time
-// let hour = date.getHours();
-// let min  = date.getMinutes();
-// let sec  = date.getSeconds();
-
-// Time & Date
-// let currDate = formatDate(padZero(month.toLocaleString()) + padZero(day.toString()) + year.toString());
-// let currTime = formatTime(padZero(formatHour(hour)) + ''+ padZero(min) +'' + padZero(sec)); 
-
-
-
-
-
-
-function callTime() {
-    // Date obj
-    const date = new Date()
-
-    // Time
-    let hour = date.getHours();
-    let min  = date.getMinutes();
-    let sec  = date.getSeconds();
-
-
-
-
-    grabTime.innerHTML = formatTime(padZero(formatHour(hour)) + ''+ padZero(min) +'' + padZero(sec)); ;
-}
-
- 
-// Current date & time
-// grabDate.innerText = currDate
-// grabTime.innerHTML = currTime
-// grabDate.innerText = currDate
-
-setInterval(callTime, 1000);
-
-// Functions
-
+// Function to call every second
+setInterval(callDateTime, 1000);
 
 const setBF = () => {
 
@@ -66,6 +24,29 @@ const setBreak = () => {
 
 }
 
+/*
+* Gets current date time
+* @return local date and time
+*/
+function callDateTime() {
+    // Date obj
+    const date = new Date()
+
+    // Time
+    let hour = date.getHours();
+    let min  = date.getMinutes();
+    let sec  = date.getSeconds();
+    
+    // Date
+    let day = date.getDate();
+    let month = date.getMonth();
+    let year = date.getFullYear();
+
+
+    // Changing Dom
+    grabTime.innerHTML = formatTime(padZero(formatHour(hour)) + ''+ padZero(min) +'' + padZero(sec)); 
+    grabDate.innerHTML = formatDate(padZero((month + 1).toString()) + padZero(day.toString()) + year.toString());
+}
 
 /*
 * Unshifts 0 at start of string if <= 1
@@ -113,3 +94,4 @@ function formatTime(str) {
 function formatHour(num){
     if(num > 12) return num - 12
 }
+

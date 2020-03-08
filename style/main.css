@@ -1,4 +1,4 @@
-html, body {
+html, body{
     background-color: purple;
     font-family:Arial Black
     , helvetica, sans-serif;
@@ -16,7 +16,7 @@ html, body {
 #sub-header{
     text-align: center;
     color: black;
-    padding-bottom: 18px;
+    padding-bottom: 15px;
 }
 
 .col-lg {
@@ -28,7 +28,20 @@ text-align: center;
 }
 
 #date {
-font-size: 3em; 
-padding-bottom: 30px;
+font-size: 3.3em; 
+color: black;
+padding-bottom: 10px;
+
+}
+
+#time{
+    color: black;
+    padding-bottom: 20px;
+    font-size: 2.3em; 
+
+}
+
+.lunch, .dinner{
+    margin-bottom: 20px;
 }
 
