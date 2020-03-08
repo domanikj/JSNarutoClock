@@ -5,7 +5,6 @@ let lunchHour   = document.getElementsByClassName("Lunch");
 let DinnerHour  = document.getElementsByClassName("Dinner");
 let DessertHour = document.getElementsByClassName("Dessert");
 
-
 // Function to call every second
 setInterval(callDateTime, 1000);
 
@@ -30,17 +29,24 @@ const setBreak = () => {
 
 
 function setLunch(num) {
-    let startHour = parseInt(num);
-    let today = new Date();
-    let endTime   = new Date();
-    let endHour   = endTime.getHours();
-    endTime.setHours(12, 0, 0);
+    let startHour   = parseInt(num);
+    let today       = new Date();
+    let startTime   = new Date();
 
-     if(endTime < today ){
-        document.getElementById('main-img').src = '../img/SasukeS.jpg'
+   
+    if(startHour === 12) {
+        startTime.setHours(12, 0, 0);
+        today.setHours(13,0,0)
+        if(startTime < today ) {
+            document.getElementById('main-img').src  = 'https://cdn5.vectorstock.com/i/1000x1000/65/24/letter-j-painted-brush-vector-20406524.jpg';    
+            document.getElementsByClassName('img-heading')[0].innerHTML = "Lunch!!! Is being served";
+        }else{
+            document.getElementById('main-img').src  = '../img/SasukeS.jpg';
+        }
+    }
 
-      
-     }
+
+
 }
 
 
