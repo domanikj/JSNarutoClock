@@ -5,18 +5,15 @@ let lunchHour   = document.getElementsByClassName("Lunch");
 let DinnerHour  = document.getElementsByClassName("Dinner");
 let DessertHour = document.getElementsByClassName("Dessert");
 
-// Function to call every second
+// Function to execute every second
 setInterval(callSets, 1000);
 
 
 
-function callSets(){
-    let monent = new Date();
-    callDateTime();
-    setLunch(monent.getHours());
-}
-
-
+/*
+* Gets current date time
+* @return local date and time
+*/
 function setLunch(num) {
     let startHour   = parseInt(num);
     let today       = new Date();
@@ -47,8 +44,19 @@ function setLunch(num) {
 
 
 /*
-* Gets current date time
-* @return local date and time
+* 
+* A function to call other functions
+*/
+function callSets(){
+    let monent = new Date();
+    callDateTime();
+    setLunch(monent.getHours());
+}
+
+
+/*
+* @param {Number} gets hour to be tested
+* @return a setin specific time
 */
 function callDateTime() {
     // Date obj
@@ -124,4 +132,3 @@ function formatHour(num){
     return num;
     }
 }
-
